@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface BillService {
-    public Bills addBill(Integer orderid, String uniqueId) throws BillsException;
+    public Bills addBill(Integer orderId, String uniqueId) throws BillsException;
     public Bills removeBill(Bills bill) throws BillsException;
     public Bills updateBill(Bills bill) throws  BillsException;
     public Bills viewBill(Bills bill) throws BillsException;

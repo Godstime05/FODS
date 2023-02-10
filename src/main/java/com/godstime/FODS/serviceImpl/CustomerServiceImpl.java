@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
-    private CustomerRepo customerRepo;
+    private CustomerRepo cRepo;
     @Autowired
     private RestaurantRepo restaurantRepo;
     @Autowired

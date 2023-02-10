@@ -9,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,36 +22,21 @@ import java.util.List;
 public class CustomerSession {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer restaurantId;
+    private Integer id;
 
-    @NotNull
-    @NotBlank
-    @NotEmpty
-    @Size(min = 3, max = 10, message = "Restaurent name should 3 to 10")
-    private String restaurantName;
+    @Column(unique = true)
+    private Integer customerId;
 
-    @NotNull
-    @NotBlank
-    @NotEmpty
-    @Size(min = 3, max = 10, message = "Restaurent Manager Name name should 3 to 10")
-    private String managerName;
+    private String uniqueId;
 
-    @NotNull
-    @NotBlank
-    @NotEmpty
-    @Size(min = 10, max = 10, message = "Contact Number should 3 to 10")
-    private String phoneNumber;
+    private LocalDateTime timeStamp;
 
-    @NotNull
-    @NotBlank
-    @NotEmpty
-    @Size(min = 3, max = 10, message = "Password length should be 3 to 10")
-    private String password;
-
-    @Embedded
-    private Address address;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Items> itemList = new ArrayList<>();
-
+    public CustomerSession(Integer customerId, String uniqueId, LocalDateTime timeStamp){
+        super();
+        this.customerId = customerId;
+        this.uniqueId = uniqueId;
+        this.timeStamp = timeStamp;
+    }
+//
+//
 }

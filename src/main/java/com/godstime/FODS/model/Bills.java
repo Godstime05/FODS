@@ -24,6 +24,10 @@ public class Bills {
 
     private Integer totalItems;
 
+    @ManyToOne
+    @JoinColumn(name = "order_details_order_id")
+    private OrderDetails orderDetails;
+
     @Embedded
     Address custAddress;
 }

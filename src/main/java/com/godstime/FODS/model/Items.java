@@ -29,7 +29,7 @@ public class Items {
     private String itemName;
 
     private Integer quantity;
-    private BigDecimal unitCost;
+    private Integer unitCost;
 
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "itemList")
